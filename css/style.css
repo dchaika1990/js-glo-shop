@@ -56,7 +56,7 @@ button {
 
 .button-icon, .button-price {
     margin-right: 10px;
-    
+
 }
 
 .button-icon {
@@ -65,7 +65,7 @@ button {
 
 .button-icon:last-child {
     margin-right: 0;
-    
+
 }
 
 .cart-count {
@@ -185,7 +185,7 @@ button {
     margin: auto auto 0;
 }
 
-.goods-card-btn .button-price{
+.goods-card-btn .button-price {
     margin: 0;
 }
 
@@ -360,7 +360,7 @@ button {
     left: 0;
     right: 0;
     z-index: 999;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .overlay.show {
@@ -376,7 +376,7 @@ button {
     position: relative;
 }
 
-.modal-header{
+.modal-header {
     display: flex;
     justify-content: space-between;
 }
@@ -417,12 +417,12 @@ button {
 }
 
 .cart-table th,
-.cart-table td{
+.cart-table td {
     text-align: left;
     border: 1px solid black
 }
 
-.cart-buy{
+.cart-buy {
     background-color: #28a745;
     border-color: #28a745;
     display: block;
