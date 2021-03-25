@@ -54,6 +54,12 @@ button {
     align-items: center;
 }
 
+.button-clear{
+    background-color: red;
+    padding: 5px 10px;
+    margin-right: 19px;
+}
+
 .button-icon, .button-price {
     margin-right: 10px;
 
@@ -379,11 +385,13 @@ button {
 .modal-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .modal-title {
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 0;
 }
 
 .modal-close {
