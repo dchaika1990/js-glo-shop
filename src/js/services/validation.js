@@ -15,7 +15,7 @@ const validation = (form) => {
     inputs.forEach(function (input) {
         input.addEventListener('keyup', function (e) {
             let name = input.getAttribute('name');
-            input.value < 2 ? valid[name] = false : valid[name] = true
+            input.value.trim() < 2 ? valid[name] = false : valid[name] = true
             checkValid();
             console.log(valid)
         })
