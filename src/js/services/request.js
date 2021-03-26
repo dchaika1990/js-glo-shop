@@ -5,3 +5,13 @@ export const getGoods = async () => {
 	}
 	return await result.json();
 }
+
+export const postData = async (url, dataUser) => {
+	let res = await fetch( url,
+		{
+			method: 'POST',
+			body: dataUser
+		}
+	)
+	return await res.json()
+}

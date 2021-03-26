@@ -1,10 +1,13 @@
-import {getGoods} from "../services/request";
+import {getGoods, postData} from "../services/request";
+import {closeModal} from "../helpers";
+import validation from "../services/validation";
 
 // Cart component
 const cartComponent = () => {
 	const cartTableGoods = document.querySelector('.cart-table__goods');
 	const cardTableTotal = document.querySelector('.card-table__total');
 	const buttonCartCount = document.querySelector('.button-cart .cart-count');
+	const modalForm = document.querySelector('.modal-form');
 
 	const cart = {
 		cartGoods: [],
@@ -100,7 +103,32 @@ const cartComponent = () => {
 		if (target.classList.contains('cart-btn-plus')) cart.plusGood(id);
 	})
 
+	modalForm.addEventListener('submit', e => {
+		e.preventDefault();
+		if (cart.cartGoods.length === 0) {
+			closeModal('#modal-cart');
+			return alert('Cart is empty')
+		}
+		validation(modalForm);
+		const formData = new FormData(modalForm);
+		formData.append('cart', JSON.stringify(cart.cartGoods));
+		postData('./assets/server.php', formData)
+			.then(res => {
+				if (!res.ok) throw new Error(res.status)
+				alert('Ваш заказ отправлен')
+			})
+			.catch(error => {
+				alert(error)
+			})
+			.finally(()=>{
+				closeModal('#modal-cart');
+				modalForm.reset();
+				cart.clearCart();
+			});
+	})
+
 	cart.renderCart();
+	validation(modalForm);
 }
 
 export default cartComponent;

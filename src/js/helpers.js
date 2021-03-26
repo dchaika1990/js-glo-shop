@@ -13,3 +13,12 @@ export const scrollLink = (btns) => {
 		})
 	})
 }
+
+export const closeModal = (modalCart) => {
+	if ( typeof modalCart !== 'string') {
+		modalCart.classList.remove('show');
+	} else {
+		const modal = document.querySelector(modalCart);
+		modal.classList.remove('show');
+	}
+};
